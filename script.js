@@ -67,6 +67,79 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cible : .skill-tab-btn et .skill-tab-content
     setupTabs('.skill-tab-btn', '.skill-tab-content');
     
-    // NOTE : Si vous ajoutez une autre section d'onglets plus tard, 
-    // vous n'aurez qu'à ajouter une ligne ici !
+    // Initialisation des onglets 'Projets'
+    setupTabs('.project-tab-btn', '.project-tab-content');
+});
+
+/**
+ * --- Fonctions pour la Section CV ---
+ */
+
+// 1. Mise à jour du CV (Vignette et Lien de Téléchargement)
+/**
+ * --- Fonctions pour la Section CV ---
+ */
+
+// 1. Mise à jour du CV (Vignette et Lien de Téléchargement)
+function updateCV() {
+    const lang = document.getElementById('cv-language').value;
+    
+    let thumbnailName;
+    let pdfName;
+    
+    // Définition des noms de fichiers basés sur la sélection
+    if (lang === 'fr') {
+        thumbnailName = 'CV_FR_vignette.png';
+        pdfName = 'CV_FR.pdf';
+    } else { // lang === 'en'
+        thumbnailName = 'CV_Anglais_vignette.png';
+        pdfName = 'CV_Anglais.pdf';
+    }
+
+    const path = 'images/CV/'; // Le chemin du dossier
+
+    // Mettre à jour la source de la vignette
+    document.getElementById('cv-thumbnail').src = path + thumbnailName;
+    document.getElementById('cv-thumbnail').alt = `Vignette du CV en ${lang === 'fr' ? 'Français' : 'Anglais'}`;
+
+    // Mettre à jour le lien de téléchargement PDF
+    document.getElementById('download-link').href = path + pdfName;
+}
+
+// 2. Ouvrir la Modale d'Aperçu
+function openModal(event) {
+    event.preventDefault(); // Empêche le lien de naviguer
+    
+    const lang = document.getElementById('cv-language').value;
+    
+    let pdfUrl;
+    // Utilisation des noms de fichiers corrigés
+    if (lang === 'fr') {
+        pdfUrl = 'images/CV/CV_FR.pdf';
+    } else { 
+        pdfUrl = 'images/CV/CV_Anglais.pdf';
+    }
+
+    // Met à jour l'iframe avec le PDF actuel
+    document.getElementById('cv-iframe').src = pdfUrl;
+    
+    // Affiche la modale
+    document.getElementById('cv-modal').classList.add('show');
+}
+
+// 3. Fermer la Modale d'Aperçu
+function closeModal() {
+    // Masque la modale
+    document.getElementById('cv-modal').classList.remove('show');
+    
+    // Arrête le chargement/affichage du PDF dans l'iframe
+    document.getElementById('cv-iframe').src = ""; 
+}
+
+// Initialisation (Optionnel mais bonne pratique) : 
+// Assurez-vous que le CV en français est chargé au départ
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (Appels setupTabs précédents) ...
+    
+    updateCV(); // Charge le CV par défaut au démarrage
 });

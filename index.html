@@ -19,16 +19,16 @@
 
         <nav class="header-right">
             <ul class="nav-list">
-                
-                <li><a href="#home"><i class="fas fa-home"></i></a></li>
-                
+        
+                <li><a href="#"><i class="fas fa-home"></i></a></li>
+        
                 <li><a href="#about">À Propos</a></li>
                 <li><a href="#diplomas">Diplômes</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#cv">CV</a></li>
-                
+        
                 <li class="dropdown-menu">
                     <button class="translate-btn" onclick="toggleDropdown()">
                         Traduire <i class="fas fa-globe"></i>
@@ -195,6 +195,158 @@
 
             </div>
         </section>
+        <section id="projects" class="projects-section">
+            
+            <h2 class="section-title-left">Projets</h2>
+
+            <div class="projects-navigation">
+                <button class="project-tab-btn active" data-tab="projets-universitaires">Projets Universitaires</button>
+                <button class="project-tab-btn" data-tab="projets-professionnels">Projets Professionnels</button>
+            </div>
+
+            <div class="projects-content-wrapper">
+                
+                <div id="projets-universitaires" class="project-tab-content active">
+                    <div class="project-grid">
+                        
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                 
+                            </div>
+                            <h3>Nom du Projet U1 (Exemple)</h3>
+                            <p class="project-tech">**Technologies :** Java, Spring Boot, PostgreSQL</p>
+                            <a href="#project-detail-u1" class="cta-project">Voir les détails <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-thumbnail">
+                                
+                            </div>
+                            <h3>Nom du Projet U2</h3>
+                            <p class="project-tech">**Technologies :** HTML, CSS, JavaScript (Vanilla)</p>
+                            <a href="#project-detail-u2" class="cta-project">Voir les détails <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        </div>
+                </div>
+                
+                <div id="projets-professionnels" class="project-tab-content">
+                    <div class="project-grid">
+
+                         <div class="project-card">
+                            <div class="project-thumbnail">
+                                
+                            </div>
+                            <h3>Refonte de l'Intranet X</h3>
+                            <p class="project-tech">**Technologies :** React, Node.js, MongoDB</p>
+                            <a href="#project-detail-p1" class="cta-project">Voir les détails <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            
+            <h2 class="section-title-left">Contact</h2>
+
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h3>Restons Connectés !</h3>
+                    <p>
+                        Que ce soit pour une opportunité d'emploi, un projet freelance, ou simplement pour échanger sur l'informatique, n'hésitez pas à me contacter via ces différents canaux.
+                    </p>
+
+                    <div class="contact-details">
+                        <p>
+                            <i class="fas fa-phone-alt"></i> 
+                            **Téléphone :** +33 6 XX XX XX XX
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i> 
+                            **Email :** louis.campagne@email.com
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/louis-campagne-bernet" target="_blank" title="Mon Profil LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="https://github.com/Louis-Campagne" target="_blank" title="Mon Dépôt GitHub"><i class="fab fa-github fa-2x"></i></a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h3>Envoyez-moi un message</h3>
+                    <form class="contact-form" action="send_mail.php" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="name">Nom / Organisation</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Adresse Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Objet</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Envoyer le Message</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="cv-section">
+            
+            <h2 class="section-title-left">CV</h2>
+
+            <div class="cv-container">
+                
+                <div class="cv-controls">
+                    <label for="cv-language">Choisir la langue du CV :</label>
+                    <select id="cv-language" onchange="updateCV()">
+                        <option value="fr">Français</option>
+                        <option value="en">Anglais</option>
+                    </select>
+                </div>
+                
+                <div class="cv-vignette-wrapper">
+                    <a id="preview-link" href="#" onclick="openModal(event)" title="Aperçu rapide">
+                        <img id="cv-thumbnail" src="images/CV/CV_FR_vignette.png" alt="Vignette du CV en Français" class="cv-thumbnail">
+                    </a>
+                </div>
+
+                <div class="cv-actions">
+                    <button class="action-btn" onclick="openModal(event)">
+                        <i class="fas fa-eye"></i> Aperçu du CV
+                    </button>
+                    <a id="download-link" 
+                       href="images/CV/CV_FR.pdf" 
+                       download 
+                       class="action-btn download-btn"
+                       target="_blank" > 
+                        <i class="fas fa-download"></i> Télécharger le CV (PDF)
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        
+        <div id="cv-modal" class="modal">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <iframe id="cv-iframe" src="" frameborder="0"></iframe>
+        </div>
         
     </main>
 
