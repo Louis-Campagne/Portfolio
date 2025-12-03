@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Louis Campagne - Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        
+        <div class="header-left">
+            <div class="logo-circle">
+                </div>
+            <span class="full-name">Louis Campagne</span>
+        </div>
+
+        <nav class="header-right">
+            <ul class="nav-list">
+                
+                <li><a href="#home"><i class="fas fa-home"></i></a></li>
+                
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#diplomas">Diplômes</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cv">CV</a></li>
+                
+                <li class="dropdown-menu">
+                    <button class="translate-btn" onclick="toggleDropdown()">
+                        Traduire <i class="fas fa-globe"></i>
+                    </button>
+                    <div id="translate-dropdown" class="dropdown-content">
+                        <a href="#" data-lang="en">Anglais</a>
+                        <a href="#" data-lang="es">Espagnol</a>
+                        <a href="#" data-lang="de">Allemand</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p style="text-align: center; margin-top: 100px;">Bienvenue sur mon portfolio !</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
