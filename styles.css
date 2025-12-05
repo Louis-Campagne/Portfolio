@@ -779,3 +779,66 @@ body {
     transform: translateY(-50%);
     background-color: white; /* Fond blanc pour le PDF */
 }
+/* --- Styles de la liste des langues dans "À Propos" --- */
+
+.languages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espace entre chaque langue */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* Style de l'Image du Drapeau */
+.flag-icon-img {
+    width: 40px; /* Largeur de l'image (environ la taille d'un 2.5em) */
+    height: auto;
+}
+
+/* Détails de la Langue (Nom, Niveau, Jauge) */
+.language-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.language-name {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.language-level {
+    font-size: 0.9em;
+    color: #e74c3c; /* Niveau en couleur d'accentuation */
+    font-weight: 600;
+    align-self: flex-end; /* Aligne le niveau CECRL à droite */
+    margin-top: -20px; /* Remonte le niveau au-dessus de la barre */
+    position: relative;
+    z-index: 10;
+    padding-right: 5px;
+}
+
+/* --- Barre de Progression (Jauge) --- */
+
+.progress-bar-wrapper {
+    width: 100%;
+    background-color: #ecf0f1; /* Gris clair pour le fond de la jauge */
+    border-radius: 5px;
+    height: 10px;
+    overflow: hidden; /* Assure que la barre ne dépasse pas le wrapper */
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #3498db; /* Bleu pour le niveau de progression */
+    transition: width 0.8s ease-out; /* Animation à l'affichage */
+    border-radius: 5px;
+}

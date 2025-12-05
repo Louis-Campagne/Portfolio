@@ -4,10 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Louis Campagne - Accueil</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+          crossorigin="anonymous">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+    </script>
+    
+    <script src="script.js"></script> 
 
     <header class="main-header">
         
@@ -72,35 +85,78 @@
                 <div id="presentation" class="about-tab-content active">
                     <h3>Mon Parcours et Mes Objectifs</h3>
                     <p>
-                        Actuellement étudiant en informatique (à vous de préciser le niveau ou la spécialité), je suis passionné par l'innovation et la résolution de problèmes complexes. Mon parcours m'a permis de développer une solide base en développement web et en logique back-end. Mon objectif principal est d'utiliser mes compétences pour créer des solutions numériques performantes.
+                        Je suis actuellement en deuxième année de BUT informatique à l'Institut universitaire de technologie de Bayonne et du Pays basque (campus d'Anglet), où j'étudie divers domaines de l'informatique, avec un intérêt particulier pour le développement web et le développement de logiciels.
+                        J'aime transformer des idées en applications fonctionnelles, que ce soit en Qt, Java, C++, PHP ou en créant des interfaces avec HTML/CSS. Je suis encore débutant, mais je progresse rapidement et j'adore apprendre de nouvelles choses à chaque projet.
                     </p>
                     <p>
-                        J'aime particulièrement travailler sur l'optimisation des performances des applications et la conception d'interfaces utilisateur intuitives.
+                        Je recherche actuellement un stage de 10 semaines débutant début avril 2026, qui me permettra d'approfondir mes compétences et de contribuer à des projets concrets.
                     </p>
                 </div>
                 
                 <div id="soft-skills" class="about-tab-content">
                     <h3>Mes Qualités Interpersonnelles</h3>
                     <ul>
-                        <li><i class="fas fa-handshake"></i> **Esprit d'équipe** : Facilité à collaborer sur des projets complexes.</li>
-                        <li><i class="fas fa-lightbulb"></i> **Proactivité et Autonomie** : Je prends des initiatives et gère mon travail de manière indépendante.</li>
-                        <li><i class="fas fa-feather-alt"></i> **Rigueur** : Souci du détail et production d'un code propre et commenté.</li>
+                        <li><strong>Collaborer au sein d'une équipe :</strong> Je m'intègre facilement dans un groupe, je partage volontiers mes connaissances et je soutiens mes coéquipiers pour atteindre collectivement nos objectifs.</li>
+                        <li><strong>Communication :</strong> J'ai la capacité d'exprimer mes idées clairement et de manière structurée, à l'écrit comme à l'oral, et je pratique l'écoute active pour une compréhension mutuelle optimale.</li>
+                        <li><strong>Capacité d’adaptation :</strong> Je suis à l'aise avec le changement et je peux ajuster rapidement mes méthodes de travail ou mes priorités face à de nouvelles situations ou exigences.</li>
+                        <li><strong>Autonomie :</strong> Je prends en charge mes responsabilités, j'organise mon travail de manière indépendante et je suis capable de prendre des décisions et des initiatives sans supervision constante.</li>
                     </ul>
                 </div>
 
                 <div id="languages" class="about-tab-content">
                     <h3>Mes Compétences Linguistiques</h3>
-                    <ul>
-                        <li>**Français** : Langue maternelle.</li>
-                        <li>**Anglais** : Niveau B2/C1 (Professionnel - à adapter).</li>
-                        <li>**Espagnol** : Notions de base.</li>
-                    </ul>
+                    <p>
+                        La communication internationale est un atout majeur que je cherche à améliorer. Voici mon niveau de maîtrise des langues étrangères, aligné sur le Cadre Européen Commun de Référence pour les Langues (CECRL).
+                    </p>
+
+                    <div class="languages-list mt-4">
+        
+                        <div class="language-item">
+                            <img src="images/drapeaux/drapeau_fr.png" alt="Drapeau Français" class="flag-icon-img">
+                            <div class="language-details">
+                                <span class="language-name">Français</span>
+                                <span class="language-level">C2</span>
+                                <div class="progress-bar-wrapper">
+                                     <div class="progress-bar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="language-item">
+                             <img src="images/drapeaux/drapeau_an.png" alt="Drapeau Anglais" class="flag-icon-img">
+                            <div class="language-details">
+                                <span class="language-name">Anglais</span>
+                                <span class="language-level">B1</span>
+                                <div class="progress-bar-wrapper">
+                                    <div class="progress-bar" style="width: 50%;"></div>
+                                </div>
+                             </div>
+                        </div>
+
+                         <div class="language-item">
+                            <img src="images/drapeaux/drapeau_es.png" alt="Drapeau Espagnol" class="flag-icon-img">
+                            <div class="language-details">
+                            <span class="language-name">Espagnol</span>
+                            <span class="language-level">A2</span>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+        
                 </div>
+            </div>
 
                 <div id="passions" class="about-tab-content">
-                    <h3>Ce Qui M'Inspire</h3>
+                    <h3>Ce Qui M'Inspire et Me Donne de l'Énergie</h3>
                     <p>
-                        En dehors du développement, je suis passionné par [un hobby, ex: la randonnée, les jeux vidéo, la musique]. Ces activités m'apportent un équilibre et nourrissent ma créativité, ce qui est essentiel dans ma vie professionnelle.
+                        En dehors du développement, je suis passionné par le sport, notamment le surf, la course à pied et le basket que je pratique en club au niveau régional. 
+                    </p>
+                    <p>
+                        Ces activités physiques m'apportent un équilibre essentiel. De plus, j'aime regarder des séries et films pour me détendre.
+                    </p>
+                    <p>
+                        Mon plus grand rêve est de voyager partout dans le monde pour découvrir de nouvelles cultures. Je me suis récemment lancé un défi ambitieux : réaliser mon propre jeu vidéo de A à Z.
                     </p>
                 </div>
 
@@ -348,8 +404,53 @@
             <iframe id="cv-iframe" src="" frameborder="0"></iframe>
         </div>
         
-    </main>
+    </main> 
 
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">Louis Campagne</h5>
+                    <p>Étudiant en Informatique. Ma passion pour le développement se traduit par des solutions propres et modernes.</p>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 text-info">Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#projects" class="text-white text-decoration-none">Projets</a></li>
+                        <li><a href="#skills" class="text-white text-decoration-none">Compétences</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="images/CV/CV_FR.pdf" target="_blank" class="text-white text-decoration-none">Télécharger le CV</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3 text-info">Contact & Suivi</h5>
+                    <p><i class="fas fa-envelope me-3"></i> louis.campagne@email.com</p>
+                    <p><i class="fas fa-phone-alt me-3"></i> +33 6 XX XX XX XX</p>
+                    
+                    <div class="social-links-footer mt-3">
+                        <a href="https://www.linkedin.com/in/louis-campagne-bernet" target="_blank" class="text-white me-4"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://github.com/Louis-Campagne" target="_blank" class="text-white me-4"><i class="fab fa-github-square fa-lg"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="mb-4 text-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">
+                        &copy; <span id="current-year"></span> Louis Campagne. Tous droits réservés. 
+                        | <a href="#" class="text-white text-decoration-none">Mentions Légales</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
-</body>
+    </body>
 </html>
+
+    
