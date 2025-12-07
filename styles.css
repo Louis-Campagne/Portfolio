@@ -1,844 +1,202 @@
-/* Réinitialisation de base */
+/* =========================================
+   THÈME NATURE & FORÊT (CORRIGÉ & LISIBLE)
+   ========================================= */
+:root {
+    --forest-primary: #2C5530;    /* Vert Forêt Profond (Header, Titres) */
+    --forest-secondary: #5E8C61;  /* Vert Feuillage */
+    --beige-bg: #F5F1E6;          /* Beige Crème (Fond du site) */
+    --beige-card: #FAF9F3;        /* Beige très clair (Fond des cartes) */
+    --earth-accent: #A05E2B;      /* Marron Terre (Boutons action) */
+    --text-dark: #1E2F23;         /* Texte sombre standard */
+    --text-light: #F5F1E6;        /* Texte clair (pour fonds foncés) */
+}
+
+/* --- Configuration Globale --- */
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f4f4f9;
+    background-color: var(--beige-bg);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 80px;
 }
 
-/* --- Style du Header --- */
-
-.main-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée pour l'effet flottant */
-    
-    /* PROPRIÉTÉS CLÉS POUR RENDRE LE HEADER FIXE */
-    position: fixed; /* Le sort du flux normal de la page et reste fixe */
-    top: 0;          /* Le fixe en haut de l'écran */
-    left: 0;         /* Étend la barre de gauche à droite */
-    width: 100%;     /* Assure qu'il couvre toute la largeur de l'écran */
-    z-index: 1000;   /* S'assure qu'il est au-dessus de tout autre contenu */
+h1, h2, h3, h4, h5 {
+    color: var(--forest-primary);
+    font-weight: 700;
 }
 
-/* Partie Gauche (Logo + Nom) */
-.header-left {
-    display: flex;
-    align-items: center;
+strong { color: var(--forest-primary); }
+
+/* --- HEADER / NAVBAR (Texte Clair) --- */
+.navbar-custom {
+    background-color: var(--forest-primary);
+    box-shadow: 0 4px 12px rgba(44, 85, 48, 0.2);
 }
 
-.logo-circle {
-    width: 40px;
-    height: 40px;
-    background-color: #3498db; /* Couleur du cercle pour le moment */
-    border-radius: 50%; /* Rendre l'élément circulaire */
-    margin-right: 10px;
-    /* Optionnel : centrer un futur logo/image */
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+.navbar-custom .navbar-brand { color: var(--text-light) !important; }
+
+/* Liens du menu principal : Couleur Claire */
+.navbar-custom .nav-link {
+    color: rgba(245, 241, 230, 0.85) !important;
+    transition: color 0.3s ease;
 }
 
-.full-name {
-    font-size: 1.5em;
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-link.active {
+    color: #ffffff !important;
+}
+
+.navbar-toggler { border-color: rgba(255,255,255,0.5); }
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --- HERO SECTION --- */
+.hero-section { padding: 60px 0; text-align: center; }
+.profile-picture-container {
+    width: 200px; height: 200px; margin: 0 auto 20px;
+    border-radius: 50%; border: 5px solid var(--forest-secondary);
+    overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.profile-picture-container img { width: 100%; height: 100%; object-fit: cover; }
+.subtitle { font-size: 1.5rem; color: var(--earth-accent); font-weight: 300; }
+
+/* --- ONGLETS (PILLS) - CORRECTION CONTRASTE --- */
+/* Boutons au repos : Texte Vert sur fond transparent (pour être lisible sur beige) */
+.nav-pills .nav-link {
+    color: var(--forest-primary) !important;
+    background-color: transparent;
+    border: 2px solid var(--forest-primary);
+    margin: 0 5px 10px;
+    border-radius: 30px;
     font-weight: 600;
 }
 
-/* --- Style de la Navigation --- */
+/* Bouton Actif : Fond Vert, Texte Beige */
+.nav-pills .nav-link.active, 
+.nav-pills .nav-link:hover {
+    background-color: var(--forest-primary) !important;
+    color: var(--text-light) !important;
+}
 
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Active Flexbox pour aligner les boutons horizontalement */
+/* --- BOUTONS D'ACTION (Terre) --- */
+.btn-earth {
+    background-color: var(--earth-accent);
+    color: white !important; /* Force le texte blanc */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-earth:hover {
+    background-color: #8B4513;
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* --- CARTES & CONTENEURS --- */
+.content-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(44, 85, 48, 0.1);
+}
+
+.card-custom {
+    background-color: var(--beige-card);
+    border: none;
+    border-left: 5px solid var(--forest-secondary);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.date-badge {
+    background-color: var(--forest-secondary);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+/* --- LANGUES --- */
+/* Alignement horizontal pour les langues */
+.language-row {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
     align-items: center;
 }
 
-.nav-list li {
-    margin-left: 15px;
+.flag-icon-img {
+    width: 45px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 20px;
 }
 
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    /* Était 5px 10px, réduisons l'horizontale à 8px */
-    padding: 5px 8px; 
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 5px;
-}
-
-.nav-list a:hover {
-    color: #3498db; /* Changement de couleur au survol */
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Style des Icônes */
-.nav-list li a .fas {
-    font-size: 1.1em;
-}
-
-/* --- Menu Déroulant "Traduire" --- */
-
-.dropdown-menu {
-    position: relative; /* Base pour positionner le menu déroulant */
-}
-
-.translate-btn {
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.translate-btn:hover {
-    background-color: #3498db;
-    border-color: #3498db;
-}
-
-.dropdown-content {
-    display: none; /* Cache le menu par défaut */
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0; /* Aligner le menu déroulant à droite du bouton */
-    border-radius: 5px;
-    overflow: hidden;
+.progress {
+    height: 12px;
+    background-color: #E0E0E0;
+    border-radius: 6px;
     margin-top: 5px;
 }
 
-.dropdown-content a {
-    color: #2c3e50;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-    color: #2c3e50;
-}
-
-.dropdown-content.show {
-    display: block; /* Affiche le menu quand la classe 'show' est ajoutée */
-}
-
-/* --- Section d'Accueil (Hero Section) --- */
-
-.hero-section {
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    align-items: center; /* Centre les éléments horizontalement (titre, texte, cercle) */
-    text-align: center;
-    padding: 80px 20px; /* Espace vertical autour du contenu */
-    background-color: #ffffff; /* Fond clair pour cette section */
-    padding-top: 100px;
-}
-
-/* Style du titre principal */
-.hero-section h1 {
-    font-size: 3em;
-    color: #2c3e50; /* Couleur assortie au header */
-    margin-bottom: 5px;
-}
-
-/* Style du sous-titre */
-.hero-section .subtitle {
-    font-size: 1.5em;
-    color: #3498db; /* Couleur d'accentuation */
-    font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 40px;
-}
-
-/* --- Photo de Profil (Cercle) --- */
-
-.profile-picture-container {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* Rendre l'élément circulaire */
-    background-color: #ecf0f1; /* Gris clair pour l'arrière-plan */
-    border: 5px solid #3498db; /* Bordure bleue pour accentuation */
-    overflow: hidden; /* Assure que l'image ne dépasse pas le cercle */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Style temporaire (Icône) pour montrer le cercle */
-.profile-picture-container .fas {
-    font-size: 100px;
-    color: #bdc3c7; /* Couleur de l'icône temporaire */
-}
-
-/* Style pour l'image quand elle sera insérée */
-.profile-picture-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Assure que l'image couvre bien le cercle sans être déformée */
-}
-/* --- Mise à jour du Style du Titre de Section --- */
-
-/* Nouveau style pour le titre aligné à gauche */
-.section-title-left {
-    font-size: 2.5em;
-    color: #2c3e50;
-    text-align: left; /* Alignement à gauche */
-    margin-bottom: 20px;
-    padding-left: 0; /* Assurez-vous qu'il n'y ait pas de marge interne excessive */
-}
-
-/* --- Section À Propos --- */
-.about-section {
-    padding: 60px 15%; /* Marge intérieure, gardons le contenu centré pour les grands écrans */
-    background-color: #f9f9f9;
-}
-
-/* Conteneur des boutons de navigation (Onglets) */
-.about-navigation {
-    display: flex; /* Active Flexbox */
-    justify-content: center; /* Centre les boutons horizontalement */
-    gap: 15px; /* Espace entre les boutons */
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
-}
-
-.about-tab-btn {
-    background-color: transparent;
-    border: 2px solid #3498db;
-    color: #3498db;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.about-tab-btn:hover {
-    background-color: #3498db;
-    color: white;
-}
-
-/* Style du bouton actif (onglet sélectionné) */
-.about-tab-btn.active {
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-}
-
-/* Contenu des Onglets */
-.about-content-wrapper {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.about-tab-content {
-    display: none; /* Cache tous les contenus par défaut */
-    line-height: 1.6;
-}
-
-.about-tab-content.active {
-    display: block; /* Affiche le contenu actif */
-}
-
-.about-tab-content h3 {
-    color: #2c3e50;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.about-tab-content ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-tab-content ul li {
-    margin-bottom: 10px;
-}
-
-.about-tab-content ul li .fas {
-    color: #3498db;
-    margin-right: 8px;
-}
-
-/* --- Section Diplômes & Formations --- */
-.diplomas-section {
-    padding: 60px 15%;
-    background-color: #ffffff;
-}
-
-.diplomas-list {
-    max-width: 800px;
-    margin: 0 auto; /* Centrer la liste des diplômes */
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espace entre chaque formation */
-}
-
-.diploma-card {
-    background-color: #f4f4f9; /* Fond légèrement gris pour la carte */
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #3498db; /* Barre bleue verticale sur la gauche */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.diploma-header {
-    display: flex;
-    justify-content: space-between; /* Pour mettre le titre à gauche et la date à droite */
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.diploma-card h3 {
-    color: #2c3e50;
-    margin: 0;
-    font-size: 1.4em;
-}
-
-.diploma-date {
-    font-weight: bold;
-    color: #e74c3c; /* Couleur d'accentuation pour la date */
-    white-space: nowrap; /* Empêche la date de passer à la ligne */
-}
-
-.institution {
-    font-style: italic;
-    color: #7f8c8d;
-    margin: 0 0 5px 0;
-}
-
-.description {
-    color: #555;
-    margin: 0;
-}
-
-/* --- Media Query pour petits écrans --- */
-@media (max-width: 600px) {
-    .diploma-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .diploma-date {
-        margin-top: 5px;
-        font-size: 0.9em;
-    }
-}
-/* --- Section Compétences --- */
-.skills-section {
-    padding: 60px 15%;
-    background-color: #f9f9f9; /* Alternance de couleur avec la section Diplômes */
-}
-
-/* --- Styles des Onglets (Couleur d'Accentuation Verte) --- */
-
-.skills-navigation {
-    /* Reprend le style de .about-navigation (centrage des boutons) */
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.skill-tab-btn {
-    background-color: transparent;
-    border: 2px solid #2ecc71; /* Vert pour les compétences */
-    color: #2ecc71;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.skill-tab-btn:hover {
-    background-color: #2ecc71;
-    color: white;
-}
-
-.skill-tab-btn.active {
-    background-color: #2ecc71;
-    color: white;
-    font-weight: bold;
-}
-
-/* Contenu des Onglets (Réutilise le style de about-content-wrapper) */
-.skills-content-wrapper {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.skill-tab-content {
-    display: none; 
-    line-height: 1.6;
-}
-
-.skill-tab-content.active {
-    display: block;
-}
-
-.skill-tab-content h3 {
-    color: #2c3e50;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.skill-tab-content ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin-top: 15px;
-}
-/* --- Section Projets --- */
-.projects-section {
-    padding: 60px 15%;
-    background-color: #ffffff; /* Alternance de couleur */
-}
-
-/* --- Styles des Onglets (Couleur d'Accentuation Rouge/Orange) --- */
-
-.projects-navigation {
-    /* Reprend le style de centrage des boutons */
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.project-tab-btn {
-    background-color: transparent;
-    border: 2px solid #e74c3c; /* Rouge/Orange pour l'accentuation */
-    color: #e74c3c;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.project-tab-btn:hover {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.project-tab-btn.active {
-    background-color: #e74c3c;
-    color: white;
-    font-weight: bold;
-}
-
-/* Contenu des Onglets (Conteneur principal) */
-.projects-content-wrapper {
-    padding: 20px 0; /* Pas de fond blanc ici car la grille sera plus visuelle */
-}
-
-.project-tab-content {
-    display: none;
-}
-
-.project-tab-content.active {
-    display: block;
-}
-
-/* --- Grille de Projets (Utilisation de CSS Grid) --- */
-
-.project-grid {
-    display: grid;
-    /* Crée des colonnes automatiques qui se replient sur mobile */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    overflow: hidden; /* Important pour que l'image ne déborde pas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px); /* Petit effet de soulèvement au survol */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.project-thumbnail {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour les miniatures */
-    background-color: #bdc3c7; /* Fond gris en attendant les images */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    /* Ajoutez ici les styles pour l'image si vous insérez une balise <img> */
-}
-
-.project-card h3 {
-    color: #2c3e50;
-    margin: 15px 15px 5px 15px;
-    font-size: 1.2em;
-}
-
-.project-tech {
-    color: #555;
-    font-size: 0.9em;
-    margin: 0 15px 15px 15px;
-}
-
-.cta-project {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    background-color: #3498db; /* Bouton bleu */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.cta-project:hover {
-    background-color: #2980b9;
-}
-/* --- Section Contact --- */
-.contact-section {
-    padding: 60px 15%;
-    background-color: #ffffff; /* Alternance de couleur */
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1000px;
-    margin: 30px auto 0;
-}
-
-/* --- Partie Gauche : Infos --- */
-.contact-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.contact-info h3 {
-    color: #3498db;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-}
-
-.contact-details p {
-    font-size: 1.1em;
-    color: #333;
-    line-height: 1.8;
-}
-
-.contact-details i {
-    color: #e74c3c; /* Couleur d'accentuation */
-    margin-right: 10px;
-    width: 20px; /* Assure un alignement propre */
-}
-
-.social-links {
-    margin-top: 25px;
-}
-
-.social-links a {
-    color: #2c3e50;
-    margin-right: 15px;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #3498db;
-}
-
-/* --- Partie Droite : Formulaire --- */
-.contact-form-wrapper {
-    flex: 1;
-    min-width: 350px;
-    padding: 25px;
-    background-color: #f4f4f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form-wrapper h3 {
-    color: #2c3e50;
-    margin-top: 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
-    font-family: inherit;
-    font-size: 1em;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    background-color: #2ecc71; /* Vert pour l'action principale */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
-}
-
-.submit-btn:hover {
-    background-color: #27ae60;
-}
-
-/* --- Media Query (Adaptation pour mobile/tablette) --- */
-@media (max-width: 850px) {
-    .contact-container {
-        flex-direction: column; /* Les blocs passent l'un sous l'autre */
-        gap: 40px;
-    }
-}
-
-/* --- Section CV --- */
-.cv-section {
-    padding: 60px 15%;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.cv-container {
-    max-width: 500px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Contrôles de la langue */
-.cv-controls {
-    text-align: left;
-    width: 100%;
-    max-width: 300px;
-}
-
-#cv-language {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-left: 10px;
-}
-
-/* Vignette du CV */
-.cv-vignette-wrapper {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: 2px solid #ddd;
-    line-height: 0; /* Supprime l'espace sous l'image */
-    transition: box-shadow 0.3s;
-}
-
-.cv-vignette-wrapper:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-.cv-thumbnail {
-    width: 100%;
-    max-width: 300px; /* Taille maximale de la vignette */
-    height: auto;
-    display: block;
-}
-
-/* Boutons d'action */
-.cv-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.action-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none; /* Pour le lien de téléchargement */
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s;
-}
-
-.action-btn i {
-    font-size: 1.1em;
-}
-
-/* Aperçu */
-.action-btn:not(.download-btn) {
-    background-color: #3498db;
-    color: white;
-}
-.action-btn:not(.download-btn):hover {
-    background-color: #2980b9;
-}
-
-/* Téléchargement */
-.download-btn {
-    background-color: #2ecc71; /* Vert pour le téléchargement */
-    color: white;
-}
-.download-btn:hover {
-    background-color: #27ae60;
-}
-
-
-/* --- Styles de la Modale (Aperçu) --- */
-
-.modal {
-    display: none; /* Cachée par défaut */
-    position: fixed;
-    z-index: 2000; /* Plus haut que le header */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9); /* Fond noir semi-transparent */
-}
-
-.modal.show {
-    display: block;
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #bbb;
-    text-decoration: none;
-}
-
-#cv-iframe {
-    margin: auto;
-    display: block;
-    width: 90%; 
-    max-width: 900px; /* Taille max pour le contenu */
-    height: 90vh; /* 90% de la hauteur de la fenêtre */
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white; /* Fond blanc pour le PDF */
-}
-/* --- Styles de la liste des langues dans "À Propos" --- */
-
-.languages-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espace entre chaque langue */
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.language-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-/* Style de l'Image du Drapeau */
-.flag-icon-img {
-    width: 40px; /* Largeur de l'image (environ la taille d'un 2.5em) */
-    height: auto;
-}
-
-/* Détails de la Langue (Nom, Niveau, Jauge) */
-.language-details {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.language-name {
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-.language-level {
-    font-size: 0.9em;
-    color: #e74c3c; /* Niveau en couleur d'accentuation */
-    font-weight: 600;
-    align-self: flex-end; /* Aligne le niveau CECRL à droite */
-    margin-top: -20px; /* Remonte le niveau au-dessus de la barre */
-    position: relative;
-    z-index: 10;
-    padding-right: 5px;
-}
-
-/* --- Barre de Progression (Jauge) --- */
-
-.progress-bar-wrapper {
-    width: 100%;
-    background-color: #ecf0f1; /* Gris clair pour le fond de la jauge */
-    border-radius: 5px;
-    height: 10px;
-    overflow: hidden; /* Assure que la barre ne dépasse pas le wrapper */
-}
-
 .progress-bar {
-    height: 100%;
-    background-color: #3498db; /* Bleu pour le niveau de progression */
-    transition: width 0.8s ease-out; /* Animation à l'affichage */
-    border-radius: 5px;
+    background-color: var(--forest-primary);
 }
+
+/* --- PROJETS --- */
+.project-thumbnail {
+    height: 180px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6c757d;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--forest-primary) !important;
+    color: var(--text-light);
+    border-top: 5px solid var(--earth-accent);
+}
+
+footer a {
+    color: #C5E1A5;
+    text-decoration: none;
+}
+footer a:hover { text-decoration: underline; color: white; }
+
+/* --- MODALE CV --- */
+.modal-content { background-color: var(--beige-bg); }
+#cv-iframe { width: 100%; height: 80vh; }
+
+/* =========================================
+   ANIMATIONS DOUCES (Uniquement au survol)
+   ========================================= */
+.profile-picture-container img { transition: transform 0.5s ease; }
+.profile-picture-container:hover img { transform: scale(1.1); }
+
+.card-custom, .content-box { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-custom:hover, .content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(44, 85, 48, 0.15);
+}
+
+.btn-earth i { transition: transform 0.3s ease; }
+.btn-earth:hover i { transform: translateX(5px); }
