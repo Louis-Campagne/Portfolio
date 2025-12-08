@@ -24,8 +24,8 @@ git commit -m “blabla”
 git log
 git log –oneline
 git commit -am “message court et significatif
-git branch nomDeLaBranche
-git branch -d nomDeLaBranche → mieux
+git branch nomDeLaBranche -> créé une branch
+git branch -d nomDeLaBranche → supprime une branche
 git branch -D nomDeLaBranche
 git branch
 git switch nomDeLaBranche → basculer de branche
