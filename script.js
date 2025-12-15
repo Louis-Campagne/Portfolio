@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Année automatique footer
     const yearElement = document.getElementById('current-year');
-    if (yearElement) yearElement.textContent = new Date().getFullYear();
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
     
     // 3. Initialisation AOS (Animations)
     // "once: false" permet de rejouer l'animation à chaque fois qu'on scrolle

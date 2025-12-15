@@ -1,34 +1,32 @@
 /* =========================================
-   THÈME NATURE & FORÊT (CORRIGÉ & LISIBLE)
+   THÈME NATURE & FORÊT (FULL SCREEN)
    ========================================= */
 :root {
-    --forest-primary: #2C5530;
-    --forest-secondary: #5E8C61;
-    --beige-bg: #F5F1E6;
-    --beige-card: #FAF9F3;
-    --earth-accent: #A05E2B;
-    --text-dark: #1E2F23;
-    --text-light: #F5F1E6;
+    --forest-primary: #2C5530;    /* Vert Forêt Profond */
+    --forest-secondary: #5E8C61;  /* Vert Feuillage */
+    --beige-bg: #F5F1E6;          /* Beige Crème */
+    --beige-card: #FAF9F3;        /* Beige très clair */
+    --earth-accent: #A05E2B;      /* Marron Terre */
+    --text-dark: #1E2F23;         /* Texte sombre */
+    --text-light: #F5F1E6;        /* Texte clair */
 }
 
+/* --- Globale --- */
 body {
     background-color: var(--beige-bg);
     color: var(--text-dark);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-top: 80px;
+    margin: 0; 
 }
 
 h1, h2, h3, h4, h5 { color: var(--forest-primary); font-weight: 700; }
 strong { color: var(--forest-primary); }
 
-/* --- SCROLL OFFSET (Pour que le menu ne cache pas le titre) --- */
-html { scroll-behavior: smooth; }
-section { scroll-margin-top: 100px; }
-
-/* --- NAVBAR --- */
+/* --- HEADER / NAVBAR --- */
 .navbar-custom {
     background-color: var(--forest-primary);
     box-shadow: 0 4px 12px rgba(44, 85, 48, 0.2);
+    min-height: 80px; /* Hauteur fixe pour cohérence */
 }
 .navbar-custom .navbar-brand { color: var(--text-light) !important; }
 .navbar-custom .nav-link {
@@ -39,8 +37,34 @@ section { scroll-margin-top: 100px; }
 .navbar-toggler { border-color: rgba(255,255,255,0.5); }
 .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
-/* --- HERO --- */
-.hero-section { padding: 60px 0; text-align: center; }
+/* =========================================
+   🌟 MISE EN PAGE PLEIN ÉCRAN (Modifications ici)
+   ========================================= */
+
+html { scroll-behavior: smooth; }
+
+section {
+    /* 1. Prend au minimum toute la hauteur de l'écran */
+    min-height: 100vh; 
+    
+    /* 2. Centre le contenu verticalement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* 3. Gestion de l'espace pour le header fixe */
+    scroll-margin-top: 80px; /* L'ancre s'arrête sous le menu */
+    padding-top: 80px;       /* Espace interne pour l'esthétique */
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* --- HERO SECTION --- */
+.hero-section { 
+    text-align: center; 
+    /* Le Hero hérite des propriétés de section, donc il sera centré et 100vh */
+}
+
 .profile-picture-container {
     width: 200px; height: 200px; margin: 0 auto 20px;
     border-radius: 50%; border: 5px solid var(--forest-secondary);
@@ -49,7 +73,7 @@ section { scroll-margin-top: 100px; }
 .profile-picture-container img { width: 100%; height: 100%; object-fit: cover; }
 .subtitle { font-size: 1.5rem; color: var(--earth-accent); font-weight: 300; }
 
-/* --- ONGLETS --- */
+/* --- ONGLETS (PILLS) --- */
 .nav-pills .nav-link {
     color: var(--forest-primary) !important;
     background-color: transparent;
@@ -95,9 +119,12 @@ section { scroll-margin-top: 100px; }
 .project-thumbnail { height: 180px; background-color: #e9ecef; display: flex; justify-content: center; align-items: center; color: #6c757d; }
 
 /* --- FOOTER --- */
+/* Le footer ne doit pas faire 100vh, il reste naturel */
 footer {
     background-color: var(--forest-primary) !important; color: var(--text-light);
     border-top: 5px solid var(--earth-accent);
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
 footer a { color: #C5E1A5; text-decoration: none; }
 footer a:hover { text-decoration: underline; color: white; }
@@ -111,7 +138,6 @@ footer a:hover { text-decoration: underline; color: white; }
    ======================================================= */
 
 /* 1. La transition (La fluidité) */
-/* Pas d'opacity ici pour ne pas bloquer AOS */
 .scroll-item {
     transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
